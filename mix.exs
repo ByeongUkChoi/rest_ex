@@ -1,16 +1,26 @@
 defmodule RestEx.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/ByeongUkChoi/rest_ex"
+  @version "0.0.0"
+
   def project do
     [
       app: :rest_ex,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+
+      # Hex
+      description: "Elixir REST API generator",
+      package: package(),
+
+      # Docs
+      docs: docs()
     ]
   end
 
@@ -37,7 +47,8 @@ defmodule RestEx.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:ex_doc, "~> 0.28", only: :docs}
     ]
   end
 
@@ -50,6 +61,24 @@ defmodule RestEx.MixProject do
   defp aliases do
     [
       setup: ["deps.get"]
+    ]
+  end
+
+  defp package() do
+    [
+      files: ~w(lib .formatter.exs mix.exs README* LICENSE*),
+      licenses: ["Apache-2.0"],
+      links: %{"GitHub" => @source_url}
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      source_ref: "v#{@version}",
+      source_url: @source_url,
+      extras: ["README.md"],
+      skip_undefined_reference_warnings_on: ["CHANGELOG.md"]
     ]
   end
 end
