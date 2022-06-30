@@ -10,7 +10,6 @@ defmodule RestEx.Entity do
           field :name, :string
           field :age, :integer, default: 0
           field :password, :string, redact: true
-          has_many :posts, Post
         end
       end
   """
