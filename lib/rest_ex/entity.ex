@@ -16,6 +16,7 @@ defmodule RestEx.Entity do
   defmacro __using__(_) do
     quote do
       use Ecto.Schema
+      use Phoenix.Router
     end
   end
 end

@@ -1,16 +1,16 @@
-defmodule RestEx.EntityTest do
+defmodule RestEx.SchemaTest do
   use ExUnit.Case, async: true
 
-  defmodule Entity do
+  defmodule User do
     use RestEx.Entity
 
-    schema "my entity" do
+    schema "users" do
       field(:username, :string)
       field(:password, :string)
     end
   end
 
   test "inspects metadata Ecto.Schama" do
-    assert inspect(%Entity{}.__meta__) == "#Ecto.Schema.Metadata<:built, \"my entity\">"
+    assert inspect(%User{}.__meta__) == "#Ecto.Schema.Metadata<:built, \"my entity\">"
   end
 end
