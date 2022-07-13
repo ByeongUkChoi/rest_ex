@@ -11,6 +11,6 @@ defmodule RestEx.SchemaTest do
   end
 
   test "inspects metadata Ecto.Schama" do
-    assert inspect(%User{}.__meta__) == "#Ecto.Schema.Metadata<:built, \"my entity\">"
+    assert inspect(%User{}.__meta__) == "#Ecto.Schema.Metadata<:built, \"users\">"
   end
 end
