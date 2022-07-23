@@ -22,7 +22,7 @@ defmodule RestEx.RouteTest do
   defmodule User do
     use RestEx.Entity
 
-    schema "users" do
+    entity "users" do
       field(:username, :string)
       field(:password, :string)
     end
