@@ -5,8 +5,8 @@ defmodule RestEx.SchemaTest do
     use RestEx.Entity
 
     entity "users" do
-      field(:username, :string)
-      field(:password, :string)
+      field :username, :string
+      field :password, :string
     end
   end
 

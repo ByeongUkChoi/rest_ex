@@ -32,6 +32,7 @@ defmodule RestEx.MixProject do
   defp deps do
     [
       {:ecto, "~> 3.8"},
+      {:plug, "~> 1.13"},
       {:plug_cowboy, "~> 2.5"},
       {:ex_doc, "~> 0.28", only: :docs}
     ]

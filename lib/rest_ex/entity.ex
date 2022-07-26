@@ -22,8 +22,10 @@ defmodule RestEx.Entity do
   defmacro entity(source, do: block) do
     quote do
       use Ecto.Schema
+      use Plug.Router
 
       schema(unquote(source), do: unquote(block))
+      get(unquote(source), unquote([do: nil]))
     end
   end
 end
